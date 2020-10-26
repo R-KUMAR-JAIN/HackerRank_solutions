@@ -3,13 +3,8 @@
 import java.util.Scanner;
 
 public class Solution {
-    public static void main(String[] args) {
-        /* Save input */
-        Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
-        int k    = scan.nextInt();
-        scan.close();
-        
+
+    public static String getSmallestAndLargest(String s, int k) {
         /* Create smallest and largest strings and initialize them */
         String smallest = s.substring(0, k);
         String largest  = s.substring(0, k);
@@ -25,7 +20,15 @@ public class Solution {
         }
         
         /* Print results */
-        System.out.println(smallest);
-        System.out.println(largest);
+        return(smallest+"\n" +largest);
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.next();
+        int k = scan.nextInt();
+        scan.close();
+      
+        System.out.println(getSmallestAndLargest(s, k));
     }
 }
